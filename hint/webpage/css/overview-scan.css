@@ -1,0 +1,212 @@
+/* loader */
+.loading_indicator {
+    margin-top: 10px;
+    margin-left: 35px;
+    border: 10px solid grey;
+    border-radius: 50%;
+    border-top: 10px solid blue;
+    width: 70px;
+    height: 70px;
+    animation: spinIndicator 1s linear infinite;
+    visibility: hidden;
+ }
+ @keyframes spinIndicator {
+    100% {
+       transform: rotate(360deg);
+    }
+ }
+
+  
+
+/* SCAN OVERVIEW */
+
+.scan-overview {
+    margin-bottom: 2.4rem;
+    width: 100%;
+}
+
+.scan-overview__status {
+    background-color: #e6e6e6;
+    display: flex;
+    font-size: 1.8rem;
+    font-weight: 500;
+    justify-content: space-between;
+    line-height: 1.8rem;
+    margin: 0;
+    padding: 1.2rem 2.2rem .6rem;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.scan-overview__status * {
+    margin-top: 0;
+}
+
+.scan-overview__progress-bar {
+    background-image: linear-gradient(270deg, #4700a3, #b914d4);
+    background-size: 300%;
+    height: 6px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: width 1s 0s linear;
+    width: 0;
+    animation: progressBarAnimation 2s ease infinite;
+}
+
+.scan-overview__progress-bar.end-animation {
+    animation: none;
+    background-size: 100%;
+    background-image: linear-gradient(to right, #4700a3, #b914d4);
+}
+
+@keyframes progressBarAnimation {
+
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+
+}
+
+.scan-overview--details {
+    background-color: #f2f2f2;
+    padding: 1.4rem 2rem;
+    position: relative;
+}
+
+.scan-overview--debug-details {
+    display: flex;
+}
+
+.scan-overview__scan-time {
+    display: none;
+    margin: 0;
+}
+
+.scan-overview--version {
+    margin-right: 2rem;
+}
+
+.scan-overview--version .scan-overview__subheader,
+.scan-overview--config .scan-overview__subheader {
+    text-transform: none;
+}
+
+.scan-overview__subheader {
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: .03rem;
+    margin-top: 1.4rem;
+    max-width: none;
+    text-transform: uppercase;
+}
+
+.scan-overview__subheader span {
+    color: #4700a3;
+    font-weight: 300;
+}
+
+.scan-overview--debug-details .scan-overview__subheader {
+    color: #000;
+    font-weight: 300;
+}
+
+.scan-overview--debug-details .scan-overview__subheader span {
+    color: #000;
+}
+
+.overview--url__url {
+    text-transform: lowercase;
+}
+
+[class*="scan-overview__body--"] {
+    font-size: 4.8rem;
+    font-weight: 200;
+    letter-spacing: .03rem;
+    margin-right: 1rem;
+    margin-top: .2rem;
+    min-width: 15rem;
+    text-transform: uppercase;
+}
+
+.scan-overview__body--purple {
+    color: #4700a3;
+}
+
+.scan-overview__body__permalink {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.scan-overview__body__permalink .permalink-content {
+    text-transform: none;
+}
+
+.permalink-copy {
+    background-color: transparent;
+    font-weight: 300;
+    min-width: 2rem;
+    padding: 0;
+    text-align: left;
+    white-space: normal;
+}
+
+.permalink-copy img {
+    vertical-align: middle;
+    width: 2rem;
+}
+
+.scan-overview__body__link {
+    color: #000;
+    display: inline-block;
+    font-weight: 300;
+}
+
+@media (min-width: 33.75em) {
+
+    .scan-overview--details {
+        display: flex;
+        justify-content: flex-start;
+        padding-bottom: 4rem;
+    }
+
+    .scan-overview--more-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .scan-overview--scan-links {
+        margin-right: 2rem;
+    }
+
+    .scan-overview__scan-time {
+        display: block;
+    }
+
+    .scan-overview--scan-links .scan-overview__subheader {
+        margin-bottom: 1.4rem;
+    }
+
+    .scan-overview--debug-details {
+        bottom: 1rem;
+        position: absolute;
+        right: 2rem;
+    }
+
+    .scan-overview__subheader {
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 58em) {
+    [class*="scan-overview__body--"] {
+        font-size: 3.6rem;
+    }
+}

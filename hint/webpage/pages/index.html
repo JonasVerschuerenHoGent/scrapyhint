@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../css/overview-scan.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Scrapyhint accessibility check</title>
+</head>
+<body>
+    <div class="container">
+        <div class="columns">
+            <!-- Results -->
+            <div class="column is-one-third">
+                <table id="resultsTable" class='table is-striped is-hoverable'>
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Checked url</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- ALL THE RESULTS SHOULD BE DROPPED HERE-->
+                        
+                    </tbody>
+                </table>
+            </div>
+
+
+            <!-- Overview results & Scan form -->
+            <div class="column is-four-fifths">
+
+                <!-- Overview Results -->
+                <div class="scan-overview" data-id="1682857725990" id="main">
+                    <div class="scan-overview__status">
+                        <div id="scan-percentage-bar" class="scan-overview__progress-bar end-animation"></div>
+                        <p>scanning <span id="scan-percentage"></span></p>
+                        <p class="scan-overview__scan-time"> scan time: </p>
+                        <p class="scan-overview__body--purple large" id="scan-time"></p>
+                    </div>
+                    <div class="scan-overview--details">
+                        <div class="scan-overview--hints">
+                            <p class="scan-overview__subheader">hints</p>
+                            <p class="scan-overview__body--purple large" id="total-hints"></p>
+                        </div>
+                        <div class="scan-overview--more-details">
+                            <div class="scan-overview--scan-links">
+                                <div class="scan-overview--url">
+                                    <p class="scan-overview__subheader">url: <span class="overview--url__url"></span></p>
+                                    <p id="main-url"></p>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="scan-overview--more-details">
+                            <div class="scan-overview--pages">
+                                <p class="scan-overview__subheader">Pages scanned: <span class="overview--url__url"></span></p>
+                                <p class="scan-overview__body--purple large" id="total-pages"></p>
+                            </div> 
+                        </div>
+                        <div class="scan-overview--debug-details">
+                            <div class="scan-overview--version">
+                                <p class="scan-overview__subheader">webhint version: <span id="version">6.14.15</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scan form -->
+                <form>
+                    <div class="field">
+                        <label class="label">Website url</label>
+                        <div class="control">
+                            <input required class="input is-focused is-medium" type="url" id="url" placeholder="url" />
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Max number of urls</label>
+                        <div class="field">
+                            <input required class="input is-focused is-medium" type="number" min="1" max="200" id="nrOfUrls" placeholder="max number" />
+                        </div>
+                    </div>
+                    <div>
+                        <p class="info" id="wrong-url-format"></p>
+                    </div>
+                    <br/>
+                    <div>
+                        <input type="button" class="button is-large is-primary" id="submitBtn" value="Run scan"></button>
+                        <div id="loader" class="loading_indicator"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/PagesComponent.js"  type="module"></script>
+</body>
+</html>
