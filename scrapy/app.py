@@ -77,7 +77,7 @@ def get_urls():
 
 
 # Logic
-@crochet.wait_for(timeout=60.0)
+@crochet.wait_for(timeout=240.0)
 def scrape_with_crochet(url):
     dispatcher.connect(_crawler_result, signal=signals.item_scraped)
     
